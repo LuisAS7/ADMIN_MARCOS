@@ -6,7 +6,7 @@
     <title>Punto de Venta - Nonna's Pizza</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/PanelAdmin.css">
+    <link rel="stylesheet" href="css/PuntoVenta.css">
 </head>
 <body>
     <!-- Sidebar -->
@@ -22,31 +22,31 @@
         <div class="sidebar-menu">
         <ul class="nav flex-column">
             <li class="nav-item">
-            <a class="nav-link" href="dashboard.html">
+            <a class="nav-link" href="Dashboard.html">
                 <i class="bi bi-speedometer2"></i>
                 <span class="sidebar-text">Dashboard</span>
             </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" href="punto-venta.html">
+            <a class="nav-link active" href="PuntoVenta.html">
                 <i class="bi bi-cash-coin"></i>
                 <span class="sidebar-text">Punto de Venta</span>
             </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="entregas.html">
+            <a class="nav-link" href="Entregas.html">
                 <i class="bi bi-truck"></i>
                 <span class="sidebar-text">Entregas</span>
             </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="inventario.html">
+            <a class="nav-link" href="Inventario.html">
                 <i class="bi bi-box-seam"></i>
                 <span class="sidebar-text">Inventario</span>
             </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="configuracion.html">
+            <a class="nav-link" href="Configuracion.html">
                 <i class="bi bi-gear"></i>
                 <span class="sidebar-text">Configuración</span>
             </a>
@@ -77,94 +77,248 @@
     <div id="content">
         <!-- Top Navbar -->
         <nav class="top-navbar">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-            <div class="col-md-6 d-flex align-items-center">
-                <button id="sidebarToggle" class="btn btn-sm btn-outline-secondary me-3">
-                <i class="bi bi-list"></i>
-                </button>
-                <nav aria-label="breadcrumb" class="flex-grow-1">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item">Administrador</li>
-                    <li class="breadcrumb-item">Frank Vidal</li>
-                    <li class="breadcrumb-item active">Punto de Venta</li>
-                </ol>
-                </nav>
-            </div>
-            <div class="col-md-6 text-end">
-                <span class="date-display me-3" id="currentDate"></span>
-                <div class="notification-badge d-inline-block">
-                <i class="bi bi-bell fs-5 text-muted"></i>
-                <span class="badge bg-danger rounded-pill">2</span>
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-6 d-flex align-items-center">
+                        <button id="sidebarToggle" class="btn btn-sm btn-outline-secondary me-3">
+                        <i class="bi bi-list"></i>
+                        </button>
+                        <nav aria-label="breadcrumb" class="flex-grow-1">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item">Administrador</li>
+                                <li class="breadcrumb-item">Frank Vidal</li>
+                                <li class="breadcrumb-item active">Punto de Venta</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <span class="date-display me-3" id="currentDate"></span>
+                        <div class="notification-badge d-inline-block">
+                            <i class="bi bi-bell fs-5 text-muted"></i>
+                            <span class="badge bg-danger rounded-pill">2</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
         </nav>
 
-        <!-- Contenido -->
+        <!-- Punto de Venta -->
         <div class="page-content">
-        <div class="container-fluid">
-            <h2 class="mb-4">Punto de Venta</h2>
-
-            <!-- Tabla de ventas -->
-            <div class="card">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Ventas Recientes</h5>
-                <button class="btn btn-primary btn-sm">
-                <i class="bi bi-plus-circle me-1"></i> Nueva Venta
-                </button>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Precio Unit.</th>
-                        <th>Total</th>
-                        <th>Fecha</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>#VNT001</td>
-                        <td>Pizza Margarita</td>
-                        <td>2</td>
-                        <td>S/ 25.00</td>
-                        <td>S/ 50.00</td>
-                        <td>28/09/2025</td>
-                    </tr>
-                    <tr>
-                        <td>#VNT002</td>
-                        <td>Pizza Pepperoni</td>
-                        <td>1</td>
-                        <td>S/ 28.00</td>
-                        <td>S/ 28.00</td>
-                        <td>28/09/2025</td>
-                    </tr>
-                    <tr>
-                        <td>#VNT003</td>
-                        <td>Bebida Gaseosa 1.5L</td>
-                        <td>3</td>
-                        <td>S/ 8.00</td>
-                        <td>S/ 24.00</td>
-                        <td>28/09/2025</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Columna Izquierda -->
+                    <div class="col-lg-8">
+                        <!-- Encabezado -->
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Punto de Venta</h2>
+                            <div class="input-group w-auto">
+                                <input type="text" class="form-control" placeholder="Buscar producto...">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Categorías de Productos -->
+                        <div class="categorias-venta">
+                            <button class="categoria-btn active" data-categoria="pizzas">Pizzas</button>
+                            <button class="categoria-btn" data-categoria="bebidas">Bebidas</button>
+                            <button class="categoria-btn" data-categoria="entradas">Entradas</button>
+                        </div>
+                        
+                        <!-- Grid de Productos -->
+                        <div class="row" id="productos-container">
+                            <!-- Producto 1 -->
+                            <div class="col-md-3 mb-4">
+                                <div class="card producto-card" data-producto="pizza-hawaiana">
+                                    <div class="producto-imagen">
+                                        <img src="Imagenes/Pizza Hawaiana.jpg" alt="Pizza Hawaiana">
+                                    </div>
+                                    <div class="producto-body">
+                                        <div class="producto-nombre">Pizza Hawaiana</div>
+                                        <div class="producto-descripcion">Piña, Jamón</div>
+                                        <div class="producto-precio">S/ 35.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto 2 -->
+                            <div class="col-md-3 mb-4">
+                                <div class="card producto-card" data-producto="pizza-pepperoni">
+                                    <div class="producto-imagen">
+                                        <img src="Imagenes/Pizza Peperoni.png" alt="Pizza Pepperoni">
+                                    </div>
+                                    <div class="producto-body">
+                                        <div class="producto-nombre">Pizza Pepperoni</div>
+                                        <div class="producto-descripcion">Pepperoni</div>
+                                        <div class="producto-precio">S/ 32.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto 3 -->
+                            <div class="col-md-3 mb-4">
+                                <div class="card producto-card" data-producto="pizza-vegetariana">
+                                    <div class="producto-imagen">
+                                        <img src="Imagenes/Pizza Vegetariana.png" alt="Pizza Vegetariana">
+                                    </div>
+                                    <div class="producto-body">
+                                        <div class="producto-nombre">Pizza Vegetariana</div>
+                                        <div class="producto-descripcion">Verduras</div>
+                                        <div class="producto-precio">S/ 30.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto 4 -->
+                            <div class="col-md-3 mb-4">
+                                <div class="card producto-card" data-producto="pizza-cuatro-quesos">
+                                    <div class="producto-imagen">
+                                        <img src="Imagenes/Pizza Cuatro Quesos.png" alt="Pizza 4 Quesos">
+                                    </div>
+                                    <div class="producto-body">
+                                        <div class="producto-nombre">Pizza 4 Quesos</div>
+                                        <div class="producto-descripcion">Quesos</div>
+                                        <div class="producto-precio">S/ 28.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto 5 -->
+                            <div class="col-md-3 mb-4">
+                                <div class="card producto-card" data-producto="pizza-margarita">
+                                    <div class="producto-imagen">
+                                        <img src="Imagenes/Pizza Margarita.jpg" alt="Pizza Margarita">
+                                    </div>
+                                    <div class="producto-body">
+                                        <div class="producto-nombre">Pizza Margarita</div>
+                                        <div class="producto-descripcion">Clásica</div>
+                                        <div class="producto-precio">S/ 18.50</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto 6 -->
+                            <div class="col-md-3 mb-4">
+                                <div class="card producto-card" data-producto="pizza-corazon">
+                                    <div class="producto-imagen">
+                                        <img src="Imagenes/pizzaCorazon.jpg" alt="Pizza corazon">
+                                    </div>
+                                    <div class="producto-body">
+                                        <div class="producto-nombre">Pizza Corazón</div>
+                                        <div class="producto-descripcion">Especial</div>
+                                        <div class="producto-precio">S/ 20.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto 7 -->
+                            <div class="col-md-3 mb-4">
+                                <div class="card producto-card" data-producto="gaseosa">
+                                    <div class="producto-imagen">
+                                        <img class="img-fluid" src="Imagenes/coca_cola.jpg" alt="Gaseosa">
+                                    </div>
+                                    <div class="producto-body">
+                                        <div class="producto-nombre">Gaseosa 1.5L</div>
+                                        <div class="producto-descripcion">Bebida</div>
+                                        <div class="producto-precio">S/ 8.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Producto 8 -->
+                            <div class="col-md-3 mb-4">
+                                <div class="card producto-card" data-producto="pan-ajo">
+                                    <div class="producto-imagen">
+                                        <img src="Imagenes/pan_ajjo.jpg" alt="Pan con Ajo">
+                                    </div>
+                                    <div class="producto-body">
+                                        <div class="producto-nombre">Pan con Ajo</div>
+                                        <div class="producto-descripcion">Acompañamiento</div>
+                                        <div class="producto-precio">S/ 12.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna Derecha -->
+                    <div class="col-lg-4">
+                        <!-- Orden Actual -->
+                        <div class="card orden-card mb-4">
+                            <div class="orden-header">
+                                <i class="bi bi-cart3"></i>
+                                <span>Orden Actual</span>
+                            </div>
+                            <div class="orden-body">
+                                <div class="carrito-vacio">
+                                    <i class="bi bi-cart-x"></i>
+                                    <p>No hay productos en el carrito</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Órdenes Pendientes -->
+                        <div class="card orden-card">
+                            <div class="orden-header">
+                                <i class="bi bi-clock-history"></i>
+                                <span>Órdenes Pendientes</span>
+                            </div>
+                            <div class="orden-body">
+                                <!-- Ejemplo Mesa En Preparación-->
+                                <div class="orden-pendiente-card">
+                                    <div class="orden-pendiente-header">
+                                        <div>
+                                            <div class="orden-tipo">Mesa</div>
+                                            <div class="orden-numero">Mesa 5</div>
+                                        </div>
+                                        <span class="orden-estado estado-preparacion">En preparación</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Ejemplo Para llevar En preparación -->
+                                <div class="orden-pendiente-card">
+                                    <div class="orden-pendiente-header">
+                                        <div>
+                                            <div class="orden-tipo">Para llevar</div>
+                                            <div class="orden-numero">#008</div>
+                                        </div>
+                                        <span class="orden-estado estado-preparacion">En preparación</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Ejemplo Mesa Listo -->
+                                <div class="orden-pendiente-card">
+                                    <div class="orden-pendiente-header">
+                                        <div>
+                                            <div class="orden-tipo">Mesa</div>
+                                            <div class="orden-numero">Mesa 12</div>
+                                        </div>
+                                        <span class="orden-estado estado-listo">Listo</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Ejemplo Para llevar Listo-->
+                                <div class="orden-pendiente-card">
+                                    <div class="orden-pendiente-header">
+                                        <div>
+                                            <div class="orden-tipo">Para llevar</div>
+                                            <div class="orden-numero">#009</div>
+                                        </div>
+                                        <span class="orden-estado estado-listo">Listo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-
         </div>
-        </div>
+    </div>
     </div>
 
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/PuntoVenta.js"></script>
 </body>
 </html>
