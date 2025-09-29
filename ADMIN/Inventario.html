@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Nonna's Pizza</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="CSS/Inventario.css">  
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <img class="img-fluid" src="Imagenes/nonnaLogo.png">
+            </div>
+            <h5 class="sidebar-text mb-0">Nonna's Pizza</h5>
+            <small class="sidebar-text">Panel de gestión</small>
+        </div>
+        
+        <div class="sidebar-menu">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="Dashboard.html">
+                        <i class="bi bi-speedometer2"></i>
+                        <span class="sidebar-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="PuntoVenta.html">
+                        <i class="bi bi-cash-coin"></i>
+                        <span class="sidebar-text">Punto de Venta</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Entregas.html">
+                        <i class="bi bi-truck"></i>
+                        <span class="sidebar-text">Entregas</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Inventario.html">
+                        <i class="bi bi-box-seam"></i>
+                        <span class="sidebar-text">Inventario</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Configuracion.html">
+                        <i class="bi bi-gear"></i>
+                        <span class="sidebar-text">Configuración</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar"><img class="img-fluid" src="Imagenes/Perfil2.jpg"></div>
+                <div class="user-details sidebar-text">
+                    <p class="user-name mb-0">Administrador</p>
+                    <p class="user-role mb-0"><span class="status-badge"></span> Activo</p>
+                </div>
+            </div>
+            
+            <div class="sidebar-action">
+                <i class="bi bi-bell"></i>
+                <span class="sidebar-text">Notificaciones</span>
+            </div>
+            
+            <div class="sidebar-action">
+                <i class="bi bi-box-arrow-right"></i>
+                <span class="sidebar-text">Cerrar Sesión</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pagina Principal -->
+    <div id="content">
+        <!-- Sección Superior -->
+        <nav class="top-navbar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-6 d-flex align-items-center">
+                        <button id="sidebarToggle" class="btn btn-sm btn-outline-secondary me-3">
+                            <i class="bi bi-list"></i>
+                        </button>
+                        <nav aria-label="breadcrumb" class="flex-grow-1">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item">Administrador</li>
+                                <li class="breadcrumb-item">Frank Vidal</li>
+                                <li class="breadcrumb-item active">Inventario</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <span class="date-display me-3" id="currentDate"></span>
+                        <div class="notification-badge d-inline-block">
+                            <i class="bi bi-bell fs-5 text-muted"></i>
+                            <span class="badge bg-danger rounded-pill">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Contenido de Inventario -->
+        <div class="page-content">
+            <div class="container-fluid">
+                <!-- Alertas de Inventario -->
+                <div class="alertas-inventario">
+                    <h5 class="mb-3"><i class="bi bi-exclamation-triangle-fill text-danger me-2"></i> Alertas de Inventario</h5>
+                    <div class="alerta-lista">
+                        <div class="alerta-item">
+                            <i class="bi bi-exclamation-triangle text-danger alerta-icono"></i>
+                            <span>Harina de trigo - Stock crítico (2 unidades)</span>
+                        </div>
+                        <div class="alerta-item">
+                            <i class="bi bi-exclamation-triangle text-danger alerta-icono"></i>
+                            <span>Queso mozzarella - Stock bajo (5 unidades)</span>
+                        </div>
+                        <div class="alerta-item">
+                            <i class="bi bi-exclamation-triangle text-warning alerta-icono"></i>
+                            <span>Salsa de Tomate - Stock medio (10 unidades)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjetas de Resumen -->
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 class="card-title">152</h4>
+                                        <p class="card-text mb-0">Total Productos</p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="bi bi-box fs-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 class="card-title">28</h4>
+                                        <p class="card-text mb-0">Stock Bajo</p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="bi bi-exclamation-triangle fs-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="card bg-info text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 class="card-title">5</h4>
+                                        <p class="card-text mb-0">Órdenes Pendientes</p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="bi bi-cart-check fs-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 class="card-title">S/ 5,240</h4>
+                                        <p class="card-text mb-0">Valor Inventariado</p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="bi bi-currency-dollar fs-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Categorías y Búsqueda -->
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Lista de Productos</h5>
+                        <div class="d-flex align-items-center">
+                            <div class="categorias-inventario me-3">
+                                <button class="categoria-btn active" data-categoria="ingredientes">Ingredientes</button>
+                                <button class="categoria-btn" data-categoria="bebidas">Bebidas</button>
+                                <button class="categoria-btn" data-categoria="empaques">Empaques</button>
+                                <button class="categoria-btn" data-categoria="limpieza">Limpieza</button>
+                            </div>
+                            <div class="input-group w-auto">
+                                <input type="text" class="form-control" placeholder="Buscar producto...">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <!-- Encabezado de categoría seleccionada -->
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5>Inventario - Ingredientes</h5>
+                            <button class="btn btn-primary">
+                                <i class="bi bi-plus-circle me-2"></i> Agregar Producto
+                            </button>
+                        </div>
+                        
+                        <!-- Cards de Productos -->
+                        <div class="row" id="productos-container">
+                            <!-- Producto 1 -->
+                            <div class="col-md-4 mb-4">
+                                <div class="card producto-card critico">
+                                    <div class="producto-header critico">
+                                        Harina de Trigo
+                                    </div>
+                                    <div class="producto-body">
+                                        <div class="producto-proveedor">
+                                            <span>Proveedor: Molinos S.A.</span>
+                                            <span>S/ 12.50 x kg</span>
+                                        </div>
+                                        <div class="producto-stats">
+                                            <span>Stock Actual</span>
+                                            <span>Mínimo</span>
+                                            <span>Máximo</span>
+                                        </div>
+                                        <div class="producto-stats-valores">
+                                            <span>2 kg</span>
+                                            <span>10 kg</span>
+                                            <span>50 kg</span>
+                                        </div>
+                                        <div class="nivel-stock">
+                                            <span>Nivel de Stock</span>
+                                            <span>10%</span>
+                                        </div>
+                                        <div class="barra-progreso">
+                                            <div class="barra-progreso-fill critico"></div>
+                                        </div>
+                                        <div class="producto-footer">
+                                            <span>Última compra: 15/10/2023</span>
+                                            <div>
+                                                <button class="btn btn-sm btn-outline-primary me-1">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-success">
+                                                    <i class="bi bi-cart-plus me-1"></i> Ordenar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto 2 -->
+                            <div class="col-md-4 mb-4">
+                                <div class="card producto-card bajo">
+                                    <div class="producto-header bajo">
+                                        Queso Mozzarella
+                                    </div>
+                                    <div class="producto-body">
+                                        <div class="producto-proveedor">
+                                            <span>Proveedor: Lácteos Frescos</span>
+                                            <span>S/ 18.00 x kg</span>
+                                        </div>
+                                        <div class="producto-stats">
+                                            <span>Stock Actual</span>
+                                            <span>Mínimo</span>
+                                            <span>Máximo</span>
+                                        </div>
+                                        <div class="producto-stats-valores">
+                                            <span>5 kg</span>
+                                            <span>15 kg</span>
+                                            <span>40 kg</span>
+                                        </div>
+                                        <div class="nivel-stock">
+                                            <span>Nivel de Stock</span>
+                                            <span>30%</span>
+                                        </div>
+                                        <div class="barra-progreso">
+                                            <div class="barra-progreso-fill bajo"></div>
+                                        </div>
+                                        <div class="producto-footer">
+                                            <span>Última compra: 18/10/2023</span>
+                                            <div>
+                                                <button class="btn btn-sm btn-outline-primary me-1">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-success">
+                                                    <i class="bi bi-cart-plus me-1"></i> Ordenar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Producto 3 -->
+                            <div class="col-md-4 mb-4">
+                                <div class="card producto-card normal">
+                                    <div class="producto-header normal">
+                                        Salsa de Tomate
+                                    </div>
+                                    <div class="producto-body">
+                                        <div class="producto-proveedor">
+                                            <span>Proveedor: Conservas Peruanas</span>
+                                            <span>S/ 8.50 x kg</span>
+                                        </div>
+                                        <div class="producto-stats">
+                                            <span>Stock Actual</span>
+                                            <span>Mínimo</span>
+                                            <span>Máximo</span>
+                                        </div>
+                                        <div class="producto-stats-valores">
+                                            <span>25 kg</span>
+                                            <span>10 kg</span>
+                                            <span>30 kg</span>
+                                        </div>
+                                        <div class="nivel-stock">
+                                            <span>Nivel de Stock</span>
+                                            <span>75%</span>
+                                        </div>
+                                        <div class="barra-progreso">
+                                            <div class="barra-progreso-fill normal"></div>
+                                        </div>
+                                        <div class="producto-footer">
+                                            <span>Última compra: 12/10/2023</span>
+                                            <div>
+                                                <button class="btn btn-sm btn-outline-primary me-1">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-success">
+                                                    <i class="bi bi-cart-plus me-1"></i> Ordenar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Órdenes de Compra -->
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Órdenes de Compra</h5>
+                        <button class="btn btn-primary">
+                            <i class="bi bi-plus-circle me-2"></i> Nueva Orden
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <!-- Orden 1 -->
+                        <div class="card orden-card pendiente mb-3">
+                            <div class="card-body">
+                                <div class="orden-header">
+                                    <h6 class="mb-0">PO-001</h6>
+                                    <span class="badge bg-warning">Pendiente</span>
+                                </div>
+                                <div class="orden-info">
+                                    <span>Proveedor: Molinos S.A.</span>
+                                    <span>3 productos</span>
+                                    <span class="fw-bold">S/ 245.00</span>
+                                </div>
+                                <div class="orden-footer">
+                                    <span class="text-muted">Fecha: 20/10/2023</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Orden 2 -->
+                        <div class="card orden-card enviado mb-3">
+                            <div class="card-body">
+                                <div class="orden-header">
+                                    <h6 class="mb-0">PO-002</h6>
+                                    <span class="badge bg-info">Enviado</span>
+                                </div>
+                                <div class="orden-info">
+                                    <span>Proveedor: Lácteos Frescos</span>
+                                    <span>2 productos</span>
+                                    <span class="fw-bold">S/ 180.50</span>
+                                </div>
+                                <div class="orden-footer">
+                                    <span class="text-muted">Fecha: 18/10/2023</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Orden 3 -->
+                        <div class="card orden-card recibido">
+                            <div class="card-body">
+                                <div class="orden-header">
+                                    <h6 class="mb-0">PO-003</h6>
+                                    <span class="badge bg-success">Recibido</span>
+                                </div>
+                                <div class="orden-info">
+                                    <span>Proveedor: Conservas Peruanas</span>
+                                    <span>4 productos</span>
+                                    <span class="fw-bold">S/ 120.75</span>
+                                </div>
+                                <div class="orden-footer">
+                                    <span class="text-muted">Fecha: 15/10/2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Análisis Rápido -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="bi bi-graph-up me-2"></i> Análisis Rápido</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="analisis-item">
+                                    <div class="analisis-header">
+                                        <span>Rotación de Inventario</span>
+                                        <span class="fw-bold">4.2</span>
+                                    </div>
+                                    <div class="barra-progreso">
+                                        <div class="barra-progreso-fill normal" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="analisis-item">
+                                    <div class="analisis-header">
+                                        <span>Cumplimiento de Proveedores</span>
+                                        <span class="fw-bold">85%</span>
+                                    </div>
+                                    <div class="barra-progreso">
+                                        <div class="barra-progreso-fill normal" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="analisis-item">
+                                    <div class="analisis-header">
+                                        <span>Productos en Stock Mínimo</span>
+                                        <span class="fw-bold">12%</span>
+                                    </div>
+                                    <div class="barra-progreso">
+                                        <div class="barra-progreso-fill bajo" style="width: 12%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Próximos Vencimientos -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="bi bi-calendar-x me-2"></i> Próximos Vencimientos</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="vencimiento-item">
+                            <span>Aceite de Oliva</span>
+                            <span class="dias-vencimiento critico">2 días</span>
+                        </div>
+                        <div class="vencimiento-item">
+                            <span>Levadura Fresca</span>
+                            <span class="dias-vencimiento critico">4 días</span>
+                        </div>
+                        <div class="vencimiento-item">
+                            <span>Jamón Ahumado</span>
+                            <span class="dias-vencimiento alerta">12 días</span>
+                        </div>
+                        <div class="vencimiento-item">
+                            <span>Pepperoni</span>
+                            <span class="dias-vencimiento alerta">15 días</span>
+                        </div>
+                        <div class="vencimiento-item">
+                            <span>Queso Parmesano</span>
+                            <span class="dias-vencimiento normal">28 días</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="JS/main.js"></script>
+    <script src="JS/Inventario.js"></script>
+</body>
+</html>

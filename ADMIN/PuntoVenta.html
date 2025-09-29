@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de Venta - Nonna's Pizza</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/PanelAdmin.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="sidebar-header">
+        <div class="logo-container">
+            <img class="img-fluid" src="imagenes/nonnaLogo.png" alt="Logo">
+        </div>
+        <h5 class="sidebar-text mb-0">Nonna's Pizza</h5>
+        <small class="sidebar-text">Panel de gestión</small>
+        </div>
+
+        <div class="sidebar-menu">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+            <a class="nav-link" href="dashboard.html">
+                <i class="bi bi-speedometer2"></i>
+                <span class="sidebar-text">Dashboard</span>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active" href="punto-venta.html">
+                <i class="bi bi-cash-coin"></i>
+                <span class="sidebar-text">Punto de Venta</span>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="entregas.html">
+                <i class="bi bi-truck"></i>
+                <span class="sidebar-text">Entregas</span>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="inventario.html">
+                <i class="bi bi-box-seam"></i>
+                <span class="sidebar-text">Inventario</span>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="configuracion.html">
+                <i class="bi bi-gear"></i>
+                <span class="sidebar-text">Configuración</span>
+            </a>
+            </li>
+        </ul>
+        </div>
+
+        <div class="sidebar-footer">
+        <div class="user-info">
+            <div class="user-avatar"><img class="img-fluid" src="imagenes/Perfil2.jpg"></div>
+            <div class="user-details sidebar-text">
+            <p class="user-name mb-0">Administrador</p>
+            <p class="user-role mb-0"><span class="status-badge"></span> Activo</p>
+            </div>
+        </div>
+        <div class="sidebar-action">
+            <i class="bi bi-bell"></i>
+            <span class="sidebar-text">Notificaciones</span>
+        </div>
+        <div class="sidebar-action">
+            <i class="bi bi-box-arrow-right"></i>
+            <span class="sidebar-text">Cerrar Sesión</span>
+        </div>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div id="content">
+        <!-- Top Navbar -->
+        <nav class="top-navbar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+            <div class="col-md-6 d-flex align-items-center">
+                <button id="sidebarToggle" class="btn btn-sm btn-outline-secondary me-3">
+                <i class="bi bi-list"></i>
+                </button>
+                <nav aria-label="breadcrumb" class="flex-grow-1">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">Administrador</li>
+                    <li class="breadcrumb-item">Frank Vidal</li>
+                    <li class="breadcrumb-item active">Punto de Venta</li>
+                </ol>
+                </nav>
+            </div>
+            <div class="col-md-6 text-end">
+                <span class="date-display me-3" id="currentDate"></span>
+                <div class="notification-badge d-inline-block">
+                <i class="bi bi-bell fs-5 text-muted"></i>
+                <span class="badge bg-danger rounded-pill">2</span>
+                </div>
+            </div>
+            </div>
+        </div>
+        </nav>
+
+        <!-- Contenido -->
+        <div class="page-content">
+        <div class="container-fluid">
+            <h2 class="mb-4">Punto de Venta</h2>
+
+            <!-- Tabla de ventas -->
+            <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Ventas Recientes</h5>
+                <button class="btn btn-primary btn-sm">
+                <i class="bi bi-plus-circle me-1"></i> Nueva Venta
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unit.</th>
+                        <th>Total</th>
+                        <th>Fecha</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>#VNT001</td>
+                        <td>Pizza Margarita</td>
+                        <td>2</td>
+                        <td>S/ 25.00</td>
+                        <td>S/ 50.00</td>
+                        <td>28/09/2025</td>
+                    </tr>
+                    <tr>
+                        <td>#VNT002</td>
+                        <td>Pizza Pepperoni</td>
+                        <td>1</td>
+                        <td>S/ 28.00</td>
+                        <td>S/ 28.00</td>
+                        <td>28/09/2025</td>
+                    </tr>
+                    <tr>
+                        <td>#VNT003</td>
+                        <td>Bebida Gaseosa 1.5L</td>
+                        <td>3</td>
+                        <td>S/ 8.00</td>
+                        <td>S/ 24.00</td>
+                        <td>28/09/2025</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
