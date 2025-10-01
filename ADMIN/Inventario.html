@@ -23,7 +23,7 @@
         <div class="sidebar-menu">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="Dashboard.html">
+                    <a class="nav-link" href="Dashboard.html">
                         <i class="bi bi-speedometer2"></i>
                         <span class="sidebar-text">Dashboard</span>
                     </a>
@@ -41,9 +41,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Inventario.html">
+                    <a class="nav-link active" href="Inventario.html">
                         <i class="bi bi-box-seam"></i>
                         <span class="sidebar-text">Inventario</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Reportes.html">
+                        <i class="bi bi-clipboard-data"></i>
+                        <span class="sidebar-text">Reportes</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -107,10 +113,18 @@
         <!-- Contenido de Inventario -->
         <div class="page-content">
             <div class="container-fluid">
+                <div class="page-header mb-4">
+                    <h2>Gestión de Inventario</h2>
+                </div>
                 <!-- Alertas de Inventario -->
-                <div class="alertas-inventario">
-                    <h5 class="mb-3"><i class="bi bi-exclamation-triangle-fill text-danger me-2"></i> Alertas de Inventario</h5>
-                    <div class="alerta-lista">
+                <div class="alertas-inventario mb-4 rounded-alerta">
+                    <div class="alerta-encabezado rounded-top">
+                        <h5 class="mb-0">
+                            <i class="bi bi-exclamation-triangle-fill text-danger me-2"></i> 
+                            Alertas de Inventario
+                        </h5>
+                    </div>
+                    <div class="alerta-lista rounded-bottom">
                         <div class="alerta-item">
                             <i class="bi bi-exclamation-triangle text-danger alerta-icono"></i>
                             <span>Harina de trigo - Stock crítico (2 unidades)</span>
@@ -193,31 +207,35 @@
                     </div>
                 </div>
                 
-                <!-- Categorías y Búsqueda -->
+                <!-- Categorías -->
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="card-header">
                         <h5 class="mb-0">Lista de Productos</h5>
-                        <div class="d-flex align-items-center">
-                            <div class="categorias-inventario me-3">
-                                <button class="categoria-btn active" data-categoria="ingredientes">Ingredientes</button>
-                                <button class="categoria-btn" data-categoria="bebidas">Bebidas</button>
-                                <button class="categoria-btn" data-categoria="empaques">Empaques</button>
-                                <button class="categoria-btn" data-categoria="limpieza">Limpieza</button>
-                            </div>
-                            <div class="input-group w-auto">
-                                <input type="text" class="form-control" placeholder="Buscar producto...">
-                                <button class="btn btn-outline-secondary" type="button">
-                                    <i class="bi bi-search"></i>
-                                </button>
+                        <div class="row mt-3">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div class="categorias-inventario">
+                                    <button class="categoria-btn active" data-categoria="ingredientes">Ingredientes</button>
+                                    <button class="categoria-btn" data-categoria="bebidas">Bebidas</button>
+                                    <button class="categoria-btn" data-categoria="empaques">Empaques</button>
+                                    <button class="categoria-btn" data-categoria="limpieza">Limpieza</button>
+                                </div>
+                                <div class="buscador-inventario ms-auto">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Buscar producto...">
+                                        <button class="btn btn-outline-secondary" type="button">
+                                            <i class="bi bi-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="card-body">
-                        <!-- Encabezado de categoría seleccionada -->
+                        <!-- Encabezado de categoría -->
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <h5>Inventario - Ingredientes</h5>
-                            <button class="btn btn-primary">
+                            <button class="btn btn-success agregar-producto-btn">
                                 <i class="bi bi-plus-circle me-2"></i> Agregar Producto
                             </button>
                         </div>
@@ -360,7 +378,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">Órdenes de Compra</h5>
-                        <button class="btn btn-primary">
+                        <button class="btn btn-warning nueva-orden-btn">
                             <i class="bi bi-plus-circle me-2"></i> Nueva Orden
                         </button>
                     </div>

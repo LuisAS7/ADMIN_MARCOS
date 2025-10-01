@@ -6,7 +6,8 @@
     --dark-color: #653312;
     --light-color: #ecf0f1;
     --warning-color: #F1C40F;
-    --button-color: #C0392B
+    --button-color: #C0392B;
+    --text-color: #000000;
 }
 
 body {

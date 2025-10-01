@@ -6,8 +6,8 @@
     <title>Panel de Administración - Nonna's Pizza</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="CSS/PanelAdmin.css">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="CSS/Configuracion.css">  
 </head>
 <body>
     <!-- Sidebar -->
@@ -23,7 +23,7 @@
         <div class="sidebar-menu">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="Dashboard.html">
+                    <a class="nav-link" href="Dashboard.html">
                         <i class="bi bi-speedometer2"></i>
                         <span class="sidebar-text">Dashboard</span>
                     </a>
@@ -47,7 +47,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Configuracion.html">
+                    <a class="nav-link" href="Reportes.html">
+                        <i class="bi bi-clipboard-data"></i>
+                        <span class="sidebar-text">Reportes</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Configuracion.html">
                         <i class="bi bi-gear"></i>
                         <span class="sidebar-text">Configuración</span>
                     </a>
@@ -104,204 +110,348 @@
                 </div>
             </div>
         </nav>
-        <!-- Contenido de Inventario -->
+        <!-- Contenido de Módulo de Configuración -->
         <div class="page-content">
             <div class="container-fluid">
+                <!-- Encabezado -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2>Gestión de Inventario</h2>
-                    <button class="btn btn-primary">
-                        <i class="bi bi-plus-circle me-2"></i> Agregar Producto
-                    </button>
+                    <h2>Configuración del Sistema</h2>
+                    <span class="etiqueta etiqueta-administrador">Solo Administrador</span>
                 </div>
                 
-                <div class="row">
-                    <div class="col-md-3 mb-4">
-                        <div class="card bg-primary text-white">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h4 class="card-title">152</h4>
-                                        <p class="card-text mb-0">Productos</p>
-                                    </div>
-                                    <div class="align-self-center">
-                                        <i class="bi bi-box-seam fs-1"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3 mb-4">
-                        <div class="card bg-success text-white">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h4 class="card-title">28</h4>
-                                        <p class="card-text mb-0">En Stock</p>
-                                    </div>
-                                    <div class="align-self-center">
-                                        <i class="bi bi-check-circle fs-1"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3 mb-4">
-                        <div class="card bg-warning text-white">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h4 class="card-title">5</h4>
-                                        <p class="card-text mb-0">Stock Bajo</p>
-                                    </div>
-                                    <div class="align-self-center">
-                                        <i class="bi bi-exclamation-triangle fs-1"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3 mb-4">
-                        <div class="card bg-danger text-white">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h4 class="card-title">3</h4>
-                                        <p class="card-text mb-0">Agotados</p>
-                                    </div>
-                                    <div class="align-self-center">
-                                        <i class="bi bi-x-circle fs-1"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Lista de Productos</h5>
-                        <div class="input-group w-auto">
-                            <input type="text" class="form-control" placeholder="Buscar producto...">
-                            <button class="btn btn-outline-secondary" type="button">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
+                <!-- Información de la Pizzería -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="bi bi-shop"></i>
+                        <span>Información de la Pizzería</span>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Producto</th>
-                                        <th>Categoría</th>
-                                        <th>Stock</th>
-                                        <th>Precio</th>
-                                        <th>Estado</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>#PZ001</td>
-                                        <td>Pizza Hawaiana Grande</td>
-                                        <td>Pizzas</td>
-                                        <td>15</td>
-                                        <td>S/ 35.00</td>
-                                        <td><span class="badge bg-success">En Stock</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary me-1">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#PZ002</td>
-                                        <td>Pizza Pepperoni Mediana</td>
-                                        <td>Pizzas</td>
-                                        <td>8</td>
-                                        <td>S/ 28.00</td>
-                                        <td><span class="badge bg-success">En Stock</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary me-1">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#BG001</td>
-                                        <td>Bebida Gaseosa 1.5L</td>
-                                        <td>Bebidas</td>
-                                        <td>3</td>
-                                        <td>S/ 8.00</td>
-                                        <td><span class="badge bg-warning">Stock Bajo</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary me-1">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#PS001</td>
-                                        <td>Pan con Ajo</td>
-                                        <td>Acompañamientos</td>
-                                        <td>0</td>
-                                        <td>S/ 12.00</td>
-                                        <td><span class="badge bg-danger">Agotado</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary me-1">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#PZ003</td>
-                                        <td>Pizza Vegetariana Familiar</td>
-                                        <td>Pizzas</td>
-                                        <td>22</td>
-                                        <td>S/ 42.00</td>
-                                        <td><span class="badge bg-success">En Stock</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary me-1">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nombre del Restaurante</label>
+                                <input type="text" class="form-control" value="Pizzería Nonna's Pizza">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Dirección</label>
+                                <input type="text" class="form-control" value="Av. Principal 123, Los Olivos">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Teléfono</label>
+                                <input type="text" class="form-control" value="555-1234">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" value="info@nonnaspizza.com">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-guardar">
+                            <i class="bi bi-floppy me-2"></i>Guardar Cambios
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Configuración Operativa -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="bi bi-gear"></i>
+                        <span>Configuración Operativa</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="config-item no-border">
+                            <div class="config-info">
+                                <div class="config-title">Modo de Operación</div>
+                                <p class="config-description">Solo delivery, solo local, o ambos</p>
+                            </div>
+                            <div class="config-action">
+                                <span class="etiquada etiqueta-automatico">Ambos</span>
+                            </div>
                         </div>
                         
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Siguiente</a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <hr>
+                        
+                        <div class="config-item">
+                            <div class="config-info">
+                                <div class="config-title">Aceptar Pedidos Online</div>
+                                <p class="config-description">Habilitar pedidos desde la web</p>
+                            </div>
+                            <div class="config-action">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="config-item">
+                            <div class="config-info">
+                                <div class="config-title">Notificaciones Push</div>
+                                <p class="config-description">Enviar notificaciones al personal</p>
+                            </div>
+                            <div class="config-action">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="config-item">
+                            <div class="config-info">
+                                <div class="config-title">Modo Nocturno</div>
+                                <p class="config-description">Reducir brillo después de las 9 PM</p>
+                            </div>
+                            <div class="config-action">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Configuración de Impresión -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="bi bi-printer"></i>
+                        <span>Configuración de Impresión</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="config-item">
+                            <div class="config-info">
+                                <div class="config-title">Impresora de Cocina</div>
+                                <p class="config-description">EPSON TM-T20II - Cocina</p>
+                            </div>
+                            <div class="config-action config-imprimir">
+                                <button class="btn btn-outline-primary btn-sm">Configurar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="config-item">
+                            <div class="config-info">
+                                <div class="config-title">Impresora de Tickets</div>
+                                <p class="config-description">EPSON TM-T20II - Caja</p>
+                            </div>
+                            <div class="config-action config-imprimir">
+                                <button class="btn btn-outline-primary btn-sm">Configurar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gestión de Usuarios -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="bi bi-people"></i>
+                        <span>Gestión de Usuarios</span>
+                    </div>
+                    <div class="card-body">
+                        <!-- Usuario 1 -->
+                        <div class="usuario-card">
+                            <div class="usuario-header">
+                                <div class="usuario-nombre">Juan Pérez</div>
+                                <div class="config-action">
+                                    <span class="etiqueta etiqueta-activo">Activo</span>
+                                    <button class="btn btn-outline-primary btn-sm ms-2 btn-editar">Editar</button>
+                                </div>
+                            </div>
+                            <div class="usuario-info">
+                                <p class="usuario-detalle">Mesero • Hace 2 horas</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Usuario 2 -->
+                        <div class="usuario-card">
+                            <div class="usuario-header">
+                                <div class="usuario-nombre">María García</div>
+                                <div class="config-action">
+                                    <span class="etiqueta etiqueta-activo">Activo</span>
+                                    <button class="btn btn-outline-primary btn-sm ms-2 btn-editar">Editar</button>
+                                </div>
+                            </div>
+                            <div class="usuario-info">
+                                <p class="usuario-detalle">Mesero • Hace 1 hora</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Usuario 3 -->
+                        <div class="usuario-card">
+                            <div class="usuario-header">
+                                <div class="usuario-nombre">Carlos Ruiz</div>
+                                <div class="config-action">
+                                    <span class="etiqueta etiqueta-activo">Activo</span>
+                                    <button class="btn btn-outline-primary btn-sm ms-2 btn-editar">Editar</button>
+                                </div>
+                            </div>
+                            <div class="usuario-info">
+                                <p class="usuario-detalle">Cajero • Hace 30 min</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Usuario 4 -->
+                        <div class="usuario-card">
+                            <div class="usuario-header">
+                                <div class="usuario-nombre">Ana López</div>
+                                <div class="config-action">
+                                    <span class="etiqueta etiqueta-inactivo">Inactivo</span>
+                                    <button class="btn btn-outline-primary btn-sm ms-2 btn-editar">Editar</button>
+                                </div>
+                            </div>
+                            <div class="usuario-info">
+                                <p class="usuario-detalle">Cocinero • Hace 2 días</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Usuario 5 -->
+                        <div class="usuario-card">
+                            <div class="usuario-header">
+                                <div class="usuario-nombre">Miguel Torres</div>
+                                <div class="config-action">
+                                    <span class="etiqueta etiqueta-activo">Activo</span>
+                                    <button class="btn btn-outline-primary btn-sm ms-2 btn-editar">Editar</button>
+                                </div>
+                            </div>
+                            <div class="usuario-info">
+                                <p class="usuario-detalle">Repartidor • Hace 15 min</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Usuario 6 -->
+                        <div class="usuario-card">
+                            <div class="usuario-header">
+                                <div class="usuario-nombre">Sofia Martín</div>
+                                <div class="config-action">
+                                    <span class="etiqueta etiqueta-activo">Activo</span>
+                                    <button class="btn btn-outline-primary btn-sm ms-2 btn-editar">Editar</button>
+                                </div>
+                            </div>
+                            <div class="usuario-info">
+                                <p class="usuario-detalle">Proveedor • Hace 3 horas</p>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary mt-3 btn-agregar-usuario">
+                            <i class="bi bi-person-plus me-2"></i>Agregar Nuevo Usuario
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Seguridad y Permisos -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="bi bi-shield-lock"></i>
+                        <span>Seguridad y Permisos</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="config-item">
+                            <div class="config-info">
+                                <div class="config-title">Autenticación de Dos Factores</div>
+                                <p class="config-description">Requerir 2FA para administradores</p>
+                            </div>
+                            <div class="config-action">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="config-item">
+                            <div class="config-info">
+                                <div class="config-title">Cerrar Sesión Automático</div>
+                                <p class="config-description">Después de 30 min de inactividad</p>
+                            </div>
+                            <div class="config-action">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="config-item">
+                            <div class="config-info">
+                                <div class="config-title">Registro de Actividades</div>
+                                <p class="config-description">Guardar log de todas las acciones</p>
+                            </div>
+                            <div class="config-action">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backup y Datos -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="bi bi-database"></i>
+                        <span>Backup y Datos</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="config-item no-border">
+                            <div class="config-info">
+                                <div class="config-title">Último Backup</div>
+                                <p class="config-description">03/09/2024 - 02:30 AM</p>
+                            </div>
+                            <div class="config-action">
+                                <span class="etiqueta etiqueta-automatico">Automático</span>
+                            </div>
+                        </div>
+                        
+                        <div class="backup-btn-group mb-3">
+                            <button class="btn btn-outline-primary">
+                                <i class="bi bi-database-fill me-2"></i>Crear Backup
+                            </button>
+                            <button class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-clockwise me-2"></i>Restaurar Datos
+                            </button>
+                        </div>
+                        
+                        <div class="config-item">
+                            <div class="config-info">
+                                <div class="config-title">Backup Automático</div>
+                                <p class="config-description">Cada día a las 2:30 AM</p>
+                            </div>
+                            <div class="config-action">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conectividad -->
+                <div class="card">
+                    <div class="card-header">
+                        <i class="bi bi-wifi"></i>
+                        <span>Conectividad</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="config-item no-border">
+                            <div class="config-info">
+                                <div class="config-title">Estado de Internet</div>
+                                <p class="config-description">Conexión estable - 45 Mbps</p>
+                            </div>
+                            <div class="config-action">
+                                <span class="etiqueta etiqueta-conectado">Conectado</span>
+                            </div>
+                        </div>
+                        
+                        <div class="config-item">
+                            <div class="config-info">
+                                <div class="config-title">Sincronización en la Nube</div>
+                                <p class="config-description">Última sync: hace 2 minutos</p>
+                            </div>
+                            <div class="config-action">
+                                <span class="etiqueta etiqueta-activo">Activa</span>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-outline-primary mt-3 btn-probar-conexion">
+                            <i class="bi bi-arrow-repeat me-2"></i>Probar Conexión
+                        </button>
                     </div>
                 </div>
             </div>
